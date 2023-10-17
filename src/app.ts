@@ -1,5 +1,7 @@
 import Fastify from 'fastify';
 
+import { userRoutes } from './modules/user/user.route';
+
 const server = Fastify();
 
 server.get('/hello', async (request, reply) => {
@@ -7,6 +9,8 @@ server.get('/hello', async (request, reply) => {
 });
 
 const main = async () => {
+  server.register(userRoutes, { prefix: 'api/users' });
+
   try {
     await server.listen({ port: 3000 });
     console.log(`Server ready at http://localhost:3000`);

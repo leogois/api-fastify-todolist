@@ -1,2 +1,12 @@
 dependencia do eslint e prettier:
 npm install --save-dev @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-import eslint-plugin-prettier eslint-plugin-simple-import-sort prettier
+
+Instalar font fire code macOsx
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
+
+Inicializar o prisma
+npx prisma init --datasource-provider postgresql
+
+Migrar o schema
+npx prisma migrate dev --name init
